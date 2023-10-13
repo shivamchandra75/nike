@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Men's Shoes</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@200;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+
+    <link href="../scss/style.scss" rel="stylesheet" />
+    <script defer src="../js/controller.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <nav id="navbar">
+        <div class="logo-container">
+          <img src="../../images/logo.svg" alt="nike-logo" />
+        </div>
+
+        <ul class="nav-links-container">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="close-menu"
+          >
+            <path
+              fill="currentColor"
+              d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59L7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12L5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"
+            />
+          </svg>
+
+          <div>
+            <a class="nav-links" href="./src/html/exclusive.html">Exclusive</a>
+            <span class="fa-solid fa-angle-right"></span>
+          </div>
+          <div>
+            <a class="nav-links" href="./src/html/mensPage.html">Men</a>
+            <span class="fa-solid fa-angle-right"></span>
+          </div>
+          <div>
+            <a class="nav-links" href="./src/html/womensPage.html">Women</a>
+            <span class="fa-solid fa-angle-right"></span>
+          </div>
+          <div>
+            <a class="nav-links" href="">sale</a>
+            <span class="fa-solid fa-angle-right"></span>
+          </div>
+        </ul>
+
+        <div class="nav-blur-overlay"></div>
+
+        <div class="icons">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="m21 21l-4.343-4.343m0 0A8 8 0 1 0 5.343 5.343a8 8 0 0 0 11.314 11.314Z"
+            />
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 256 256"
+          >
+            <path
+              fill="currentColor"
+              d="M216 64h-40a48 48 0 0 0-96 0H40a16 16 0 0 0-16 16v120a16 16 0 0 0 16 16h176a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16Zm-88-32a32 32 0 0 1 32 32H96a32 32 0 0 1 32-32Zm88 168H40V80h40v16a8 8 0 0 0 16 0V80h64v16a8 8 0 0 0 16 0V80h40Z"
+            />
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M12 1.25a4.75 4.75 0 1 0 0 9.5a4.75 4.75 0 0 0 0-9.5ZM8.75 6a3.25 3.25 0 1 1 6.5 0a3.25 3.25 0 0 1-6.5 0ZM12 12.25c-2.313 0-4.445.526-6.024 1.414C4.42 14.54 3.25 15.866 3.25 17.5v.102c-.001 1.162-.002 2.62 1.277 3.662c.629.512 1.51.877 2.7 1.117c1.192.242 2.747.369 4.773.369s3.58-.127 4.774-.369c1.19-.24 2.07-.605 2.7-1.117c1.279-1.042 1.277-2.5 1.276-3.662V17.5c0-1.634-1.17-2.96-2.725-3.836c-1.58-.888-3.711-1.414-6.025-1.414ZM4.75 17.5c0-.851.622-1.775 1.961-2.528c1.316-.74 3.184-1.222 5.29-1.222c2.104 0 3.972.482 5.288 1.222c1.34.753 1.961 1.677 1.961 2.528c0 1.308-.04 2.044-.724 2.6c-.37.302-.99.597-2.05.811c-1.057.214-2.502.339-4.476.339c-1.974 0-3.42-.125-4.476-.339c-1.06-.214-1.68-.509-2.05-.81c-.684-.557-.724-1.293-.724-2.601Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 448 512"
+            class="menu"
+          >
+            <path
+              fill="currentColor"
+              d="M0 96c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zm448 160c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h384c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+        </div>
+      </nav>
+
+      <section class="banner">
+        <div class="banner-img img-container">
+          <img src="../../images/men_banner_1_mobile.webp" alt="" />
+        </div>
+
+        <div class="banner-text">
+          <h3 class="banner-text__heading">NIKE METCON 9</h3>
+          <p class="banner-text__para">
+            Durability and stability for your strength training.
+          </p>
+          <a href="#" class="banner-text__button btn-black">Shop</a>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="two-imgs img-container grid-stacked">
+          <img src="../../images/men_shoe_1.jpeg" alt="" />
+          <div class="text">
+            <h3>This is heading</h3>
+            <a href="#" class="button btn-white">Shop</a>
+          </div>
+        </div>
+        <div class="img-container grid-stacked">
+          <img src="../../images/men_shoes_2.webp" alt="" />
+          <div class="text">
+            <h3>Explore the Collection</h3>
+            <a href="#" class="button btn-white">Shop</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="banner">
+        <div class="banner-img img-container">
+          <img src="../../images/men_banner_2_mobile.webp" alt="" />
+        </div>
+
+        <div class="banner-text">
+          <p class="banner-text__subheading">Jordan</p>
+          <h3 class="banner-text__heading">EASY ALL DAY</h3>
+          <p class="banner-text__para">
+            Fashion is all about Your Comfort and Confidence.
+          </p>
+          <a href="#" class="banner-text__button btn-black">Shop</a>
+        </div>
+      </section>
+
+      <footer></footer>
+    </div>
+  </body>
+</html>
