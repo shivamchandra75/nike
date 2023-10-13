@@ -52,10 +52,10 @@ const getQuery = function () {
   return query;
 };
 
-export const renderSearchProduct = async function (query) {
+const renderSearchProduct = async function (query) {
   try {
     console.log("aa", query);
-    if (!query) return;
+    // if (!query) return;
 
     window.location.href = "http://localhost:5173/src/html/results.html";
     console.log("we switched to results page");
