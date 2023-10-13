@@ -46,18 +46,22 @@ const hideElement = function (element) {
  *
  * */
 
+
+
+
 const getQuery = function () {
   const query = searchInput.value;
   searchInput.value = "";
   return query;
 };
 
-export const renderSearchProduct = async function (query) {
+const renderSearchProduct = async function () {
   try {
+    const url = new URL(window.location.href);
+    const query = url.searchParams.get("query");
     console.log("aa", query);
     if (!query) return;
 
-    window.location.href = "http://localhost:5173/src/html/results.html";
     console.log("we switched to results page");
     //loading the results
     await model.loadSearchResults(query);
@@ -126,6 +130,8 @@ if (hero) navReachesTopObserver.observe(hero);
 
 //>>>>>>>>>>>>>>> EVENT-LISTENERS >>>>>>>>>>>>>>>>>>>>
 
+window.addEventListener('load', renderSearchProduct())
+
 menu.addEventListener("touchstart", showMenuMobile);
 closeMenuBtn.addEventListener("touchstart", closeMenuMobile);
 
@@ -137,6 +143,6 @@ closebtn.addEventListener("click", () => hideElement(searchMenu));
 
 searchInputForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  renderSearchProduct(getQuery());
+  window.location.href = `http://localhost:5173/src/html/results.html?query=${getQuery()}`;
 });
 //<<<<<<<<<<<<<<< EVENT-LISTENERS <<<<<<<<<<<<<<<<<<<<
