@@ -37,33 +37,31 @@ const hideElement = function (element) {
   element.classList.remove("show-element");
 };
 
-/*
- create a function that takes input and searches for that product in database and render cards of that product.
- fetch input & store it in a state
- search for that product in the database using query.
- render cards and append them into the results-grid.
-
- *
- * */
-
+// HELPER FUNC.
 const getQuery = function () {
   const query = searchInput.value;
   searchInput.value = "";
   return query;
 };
 
-const renderSearchProduct = async function (query) {
+// <<<<<<< HEAD
+// const renderSearchProduct = async function (query) {
+// =======
+// >>>>>>> origin/master
+const renderSearchProduct = async function () {
   try {
-    console.log("aa", query);
-    // if (!query) return;
+    const url = new URL(window.location.href);
 
-    window.location.href = "http://localhost:5173/src/html/results.html";
-    console.log("we switched to results page");
+    const resultsPageLoaded = url.searchParams.get("resultsPageLoaded");
+    if (!resultsPageLoaded) return;
+
+    const query = url.searchParams.get("query");
+    if (!query) return;
+
     //loading the results
     await model.loadSearchResults(query);
 
-    // use array of results to map and render cards.
-    // model.state.search.results
+    // use array of model.search.results to map and render cards.
     const cardsArray = model.state.search.results.map((product) => {
       return `
             <div class="card">
@@ -80,8 +78,11 @@ const renderSearchProduct = async function (query) {
     });
 
     const markup = cardsArray.join("");
+
+    //empty the previous results content
     resultsGrid.innerHTML = "";
 
+    // place new results content
     resultsGrid.insertAdjacentHTML("afterbegin", markup);
   } catch (err) {
     console.error(err);
@@ -126,6 +127,8 @@ if (hero) navReachesTopObserver.observe(hero);
 
 //>>>>>>>>>>>>>>> EVENT-LISTENERS >>>>>>>>>>>>>>>>>>>>
 
+window.addEventListener("load", renderSearchProduct());
+
 menu.addEventListener("touchstart", showMenuMobile);
 closeMenuBtn.addEventListener("touchstart", closeMenuMobile);
 
@@ -137,6 +140,6 @@ closebtn.addEventListener("click", () => hideElement(searchMenu));
 
 searchInputForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  renderSearchProduct(getQuery());
+  window.location.href = `http://localhost:5173/src/html/results.html?query=${getQuery()}&resultsPageLoaded=true`;
 });
 //<<<<<<<<<<<<<<< EVENT-LISTENERS <<<<<<<<<<<<<<<<<<<<
