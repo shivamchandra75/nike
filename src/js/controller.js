@@ -48,6 +48,7 @@ const getQuery = function () {
 };
 
 // <<<<<<<<<<<<< HELPER FUNC.
+
 const renderSearchProduct = async function () {
   try {
     const url = new URL(window.location.href);
