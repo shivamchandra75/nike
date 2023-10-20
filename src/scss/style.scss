@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&family=Passion+One:wght@400;700;900&display=swap");
+
 // main colors
 $color-primary: #ffffff;
 $color-secondary: #000000;
@@ -35,7 +36,11 @@ svg {
   display: block;
 }
 
-@media screen and (width > 300px) {
+@media screen and (width >= 300px) {
+  section:not(.banner-home):not(.product):first-of-type {
+    margin-top: 6.4rem;
+  }
+
   section {
     padding-inline: 1.6rem;
     margin-bottom: 8.4rem;
@@ -55,11 +60,15 @@ svg {
     grid-auto-flow: column;
     align-items: center;
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     min-height: 6.4rem;
     padding-inline: 1.6rem;
-    background-color: $color-primary;
+    background-color: #ffffffaa;
+    backdrop-filter: blur(25px);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    // border-bottom: 0.5px solid #ddd;
     z-index: 1;
 
     .heart-icon-container {
@@ -127,11 +136,13 @@ svg {
     padding-top: 1.6rem;
     background-color: $color-primary;
     position: fixed;
+    top: 0;
     z-index: 4;
   }
 
   .search-bar {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     gap: 1rem;
     background-color: #eee;
     padding-block: 1rem;
@@ -140,6 +151,8 @@ svg {
     max-width: 80%;
 
     .search-input {
+      min-width: 100%;
+      min-height: 100%;
       background-color: transparent;
       box-shadow: none;
       outline: none;
@@ -305,6 +318,10 @@ svg {
     filter: blur(12px);
   }
 
+  // .men-first-banner {
+  //   margin-top: 4rem;
+  // }
+
   .banner-text {
     margin-top: 2.4rem;
     & > * {
@@ -333,48 +350,6 @@ svg {
   footer {
     height: 5rem;
     background-color: $color-secondary;
-  }
-
-  .hide-element {
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .show-element {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.6rem;
-  }
-
-  .grid-center {
-    display: grid;
-    place-items: center;
-  }
-
-  .grid-stacked {
-    display: grid;
-
-    & > * {
-      grid-column: 1/-1;
-      grid-row: 1/-1;
-    }
-    & > .img-container img {
-      z-index: -1;
-    }
-    & > .text {
-      align-self: flex-end;
-      margin: 2.4rem;
-    }
-    & h3 {
-      color: $color-primary;
-      font-weight: 400;
-      margin-bottom: 2.4rem;
-    }
   }
 
   .category-filter-container {
@@ -428,9 +403,15 @@ svg {
   }
 
   .card {
-    // &__img img {
-    //   content: url("https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5ce0216a-3c5c-4518-b3a9-4731dd1de836/dunk-low-retro-shoes-bCzchX.png");
-    // }
+    display: grid;
+    position: relative;
+
+    &__overlay {
+      position: absolute;
+      min-width: 100%;
+      min-height: 100%;
+      cursor: pointer;
+    }
 
     &__details {
       display: grid;
@@ -446,7 +427,89 @@ svg {
       color: $color-faded;
     }
     &__price {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+  }
+
+  .product {
+    display: grid;
+    gap: 1.6rem;
+    grid-template-areas:
+      "detail"
+      "img"
+      "size"
+      "btn";
+    margin-top: 9.6rem;
+
+    &__details {
+      grid-area: detail;
+    }
+    &__name {
+      font-size: 2.4rem;
+      font-weight: 500;
+      line-height: 4rem;
+    }
+    &__desc {
+      font-weight: 500;
+    }
+    &__price {
+      margin-top: 1.6rem;
+      margin-bottom: 0.8rem;
       font-size: 2rem;
+      font-weight: 500;
+    }
+    &__img {
+      grid-area: img;
+    }
+    &__size {
+      grid-area: size;
+      p {
+        font-size: 2rem;
+        padding-left: 1em;
+        font-weight: 500;
+      }
+      .size-btn-grid {
+        display: grid;
+        gap: 1.6rem;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 1.6rem;
+      }
+    }
+    .tax-details {
+      color: $color-faded;
+    }
+    .btn-white {
+      padding-block: 1em;
+      padding-inline: 0;
+      border-radius: 0.8rem;
+    }
+
+    &__btns {
+      grid-area: btn;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+    }
+    &__btn-white {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 1.6rem;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.6rem;
+      padding-block: 0.6em;
+      border: 1px solid black;
+      border-radius: 2.4em;
+      text-decoration: none;
+      color: $color-secondary;
+      background-color: $color-primary;
+    }
+
+    .heart-icon {
+      max-width: 2rem;
+      display: inline-block;
     }
   }
 
@@ -455,6 +518,7 @@ svg {
     font-size: 1.6rem;
     padding-inline: 1.6em;
     padding-block: 0.6em;
+    border: 1px solid black;
     border-radius: 2.4em;
     text-decoration: none;
     background-color: $color-secondary;
@@ -465,14 +529,57 @@ svg {
     font-size: 1.6rem;
     padding-inline: 1.6em;
     padding-block: 0.6em;
+    border: 1px solid black;
     border-radius: 2.4em;
     text-decoration: none;
     color: $color-secondary;
     background-color: $color-primary;
   }
+
+  .hide-element {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .show-element {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .grid-center {
+    display: grid;
+    place-items: center;
+  }
+
+  .grid-stacked {
+    display: grid;
+
+    & > * {
+      grid-column: 1/-1;
+      grid-row: 1/-1;
+    }
+    & > .img-container img {
+      z-index: -1;
+    }
+    & > .text {
+      align-self: flex-end;
+      margin: 2.4rem;
+    }
+    & h3 {
+      color: $color-primary;
+      font-weight: 400;
+      margin-bottom: 2.4rem;
+    }
+  }
 }
 
-@media screen and (width > 700px) {
+@media screen and (width >= 700px) {
   // tab styles
   #navbar {
     padding-inline: 3.2rem;
@@ -572,6 +679,9 @@ svg {
 }
 
 @media screen and (width > 1000px) {
+  section:not(.banner-home):not(.product):first-of-type {
+    margin-top: 6rem;
+  }
   section {
     padding-inline: 4rem;
     margin-bottom: 8.4rem;
@@ -719,41 +829,21 @@ svg {
     cursor: pointer;
   }
 
+  .product {
+    column-gap: 4.8rem;
+    row-gap: 1.6rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "img detail"
+      "img size"
+      "img btn";
+    max-width: 80%;
+    margin-inline: auto;
+    margin-top: 12rem;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 }
-
-// .search-bar-container {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   width: 100%;
-//
-//   .search-bar {
-//     display: flex;
-//     gap: 1rem;
-//     background-color: #eee;
-//     padding-block: 1rem;
-//     padding-inline: 1rem;
-//     border-radius: 3.2rem;
-//
-//     .search-input {
-//       background-color: transparent;
-//       box-shadow: none;
-//       outline: none;
-//       border: none;
-//       &:focus {
-//         outline: none;
-//         border: none;
-//       }
-//     }
-//   }
-//
-//   .search-close-btn {
-//     font-weight: 500;
-//     position: absolute;
-//     right: 5%;
-//   }
-// }

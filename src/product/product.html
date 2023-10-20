@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Results</title>
+    <title></title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@200;400;600;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
-
     <link href="../scss/style.scss" rel="stylesheet" />
     <script defer type="module" src="../js/controller.js"></script>
   </head>
   <body>
     <nav id="navbar">
-      <div class="logo-container">
+      <a class="logo-container" href="#">
         <img src="../../images/logo.svg" alt="nike-logo" />
-      </div>
+      </a>
 
       <ul class="nav-links-container">
         <div class="close-menu-icon-container">
@@ -251,75 +240,59 @@
       </div>
     </div>
 
-    <div class="category-filter-container">
-      <h3 class="category">Men's Shoes</h3>
-      <div class="filters-container">
-        <a class="filter-lifestyle">Lifestyle</a>
-        <a class="filter-jordan">Jordan</a>
-        <a class="filter-running">Running</a>
+    <section class="product">
+      <div class="product__details">
+        <p class="product__name">Nike Air Force 1</p>
+        <p class="product__desc">Men's Shoes</p>
+        <p class="product__price">MRP: $500</p>
+        <div class="tax-details">incl. of all taxes</div>
+        <div class="tax-details">(Also includes all applicable duties)</div>
       </div>
-      <div class="drop-down">
-        <button class="drop-down__btn">Sort By ⇓</button>
-        <div class="drop-down__content">
-          <div class="drop-down__option">Price:High-Low</div>
-          <div class="drop-down__option">Price:Low-High</div>
-          <div class="drop-down__option">New</div>
+      <div class="product__img">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/627df3e6-5ed6-47e9-a38a-8d5e139712bb/e-series-1-shoes-j57hxR.png"
+          alt=""
+        />
+      </div>
+      <div class="product__size">
+        <p>Select Size</p>
+        <div class="size-btn-grid">
+          <button class="btn-white">UK 5</button>
+          <button class="btn-white">UK 5.5</button>
+          <button class="btn-white">UK 6</button>
+          <button class="btn-white">UK 6.5</button>
+          <button class="btn-white">UK 7</button>
+          <button class="btn-white">UK 7.5</button>
+          <button class="btn-white">UK 8</button>
+          <button class="btn-white">UK 8.5</button>
+          <button class="btn-white">UK 9</button>
+          <button class="btn-white">UK 9.5</button>
+          <button class="btn-white">UK 11</button>
+          <button class="btn-white">UK 11.5</button>
         </div>
       </div>
-    </div>
+      <div class="product__btns">
+        <button class="product__btn-black btn-black">Add to Bag</button>
+        <button class="product__btn-white">
+          Favourite
 
-    <div class="results-grid">
-      <!--   <div class="card"> -->
-      <!--     <div class="card__img"> -->
-      <!--       <img src="" alt="" /> -->
-      <!--     </div> -->
-      <!--     <div class="card__details"> -->
-      <!--       <h3 class="card__name">Nike Vomero 5</h3> -->
-      <!--       <p class="card__desc">mens shoes</p> -->
-      <!--       <h3 class="card__price">MRP: $500</h3> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!---->
-      <!--   <div class="card"> -->
-      <!--     <div class="card__img"> -->
-      <!--       <img src="" alt="" /> -->
-      <!--     </div> -->
-      <!--     <div class="card__details"> -->
-      <!--       <h3 class="card__name">name</h3> -->
-      <!--       <p class="card__desc">description</p> -->
-      <!--       <p class="card__price">price</p> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!--   <div class="card"> -->
-      <!--     <div class="card__img"> -->
-      <!--       <img src="" alt="" /> -->
-      <!--     </div> -->
-      <!--     <div class="card__details"> -->
-      <!--       <h3 class="card__name">name</h3> -->
-      <!--       <p class="card__desc">description</p> -->
-      <!--       <p class="card__price">price</p> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!--   <div class="card"> -->
-      <!--     <div class="card__img"> -->
-      <!--       <img src="" alt="" /> -->
-      <!--     </div> -->
-      <!--     <div class="card__details"> -->
-      <!--       <h3 class="card__name">name</h3> -->
-      <!--       <p class="card__desc">description</p> -->
-      <!--       <p class="card__price">price</p> -->
-      <!--     </div> -->
-      <!--   </div> -->
-      <!--   <div class="card"> -->
-      <!--     <div class="card__img"> -->
-      <!--       <img src="" alt="" /> -->
-      <!--     </div> -->
-      <!--     <div class="card__details"> -->
-      <!--       <h3 class="card__name">name</h3> -->
-      <!--       <p class="card__desc">description</p> -->
-      <!--       <p class="card__price">price</p> -->
-      <!--     </div> -->
-      <!--   </div> -->
-    </div>
+          <div class="heart-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 36 36"
+            >
+              <path
+                fill="currentColor"
+                d="M18 32.43a1 1 0 0 1-.61-.21C11.83 27.9 8 24.18 5.32 20.51C1.9 15.82 1.12 11.49 3 7.64c1.34-2.75 5.19-5 9.69-3.69A9.87 9.87 0 0 1 18 7.72a9.87 9.87 0 0 1 5.31-3.77c4.49-1.29 8.35.94 9.69 3.69c1.88 3.85 1.1 8.18-2.32 12.87c-2.68 3.67-6.51 7.39-12.07 11.71a1 1 0 0 1-.61.21ZM10.13 5.58A5.9 5.9 0 0 0 4.8 8.51c-1.55 3.18-.85 6.72 2.14 10.81A57.13 57.13 0 0 0 18 30.16a57.13 57.13 0 0 0 11.06-10.83c3-4.1 3.69-7.64 2.14-10.81c-1-2-4-3.59-7.34-2.65a8 8 0 0 0-4.94 4.2a1 1 0 0 1-1.85 0a7.93 7.93 0 0 0-4.94-4.2a7.31 7.31 0 0 0-2-.29Z"
+                class="clr-i-outline clr-i-outline-path-1"
+              />
+              <path fill="none" d="M0 0h36v36H0z" />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </section>
   </body>
 </html>
